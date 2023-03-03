@@ -17,8 +17,14 @@ The goal of this project is to develop algorithms that can accurately diagnose a
 1. [ Introduction. ](#desc)
 
 	1.1 [Fundamentals](#subparagraph1)
-3. [ Methodology. ](#desc)
-4. [ Limitations of study. ](#usage)
+2. [ Methodology. ](#desc)
+
+	2.1 [Importing the dataset](#subparagraph1)
+	
+	2.2 [Exploring the dataset](#subparagraph1)	
+	
+	2.3 [Data Preparation for training](#subparagraph1)
+3. [ Limitations of study. ](#usage)
 
 <a name="desc"></a>
 ## 1. Introduction
@@ -44,4 +50,30 @@ Plant diseases are generally classified into the following 3 categories: -
 <a name="usage"></a>
 ## 2. Methodology
 
-sometext
+We have approached the given problem by using  deep learning framework PyTorch. For our end goal we decided to develop a model using  deep learningl and transfer learning technique. 
+
+This analysis was conducted using Python through Jupyter notebook. In-built libraries and methods were used to run the machine learning models. When needed, functions were defined to simplify specific analyses or visualizations.
+
+
+### 2.1 Importing the dataset <a name="subparagraph1"></a>
+This dataset is recreated using offline augmentation from the original dataset. The original dataset can be found on this github repo. This dataset consists of about 87K rgb images of healthy and diseased crop leaves which is categorized into 38 different classes. The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure. A new directory containing 33 test images is created later for prediction purpose.
+
+<a name="usage"></a>
+### 2.2 Exploring the dataset <a name="subparagraph1"></a>
+The dataset contains 38 classes of crop disease pairs
+
+We have 14 unique varieties of plants.
+
+We have 26 types of images that show a particular disease in a particular plant.
+
+There are 70295 images for training
+
+
+<a name="usage"></a>
+### 2.3 Data Preparation for training <a name="subparagraph1"></a>
+The TorchVision datasets subpackage is a convenient utility for accessing well-known public image and video datasets. You can use these tools to start training new computer vision models very quickly.We used subclass torchvision.datasets.ImageFolder which helps in loading the image data when the data is arranged in a specific way
+
+Normalising image input - Data normalization is an important step which ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network. Data normalization is done by subtracting the mean from each pixel and then dividing the result by the standard deviation. The distribution of such data would resemble a Gaussian curve centered at zero. For image inputs we need the pixel numbers to be positive, so we might choose to scale the normalized data in the range [0,1] or [0, 255]. For our data-set example, we need to transform the pixel values of each image (0-255) to 0-1 as neural networks. The entire array of pixel values is converted to torch tensor and then divided by 255.
+
+
+<a name="usage"></a>
