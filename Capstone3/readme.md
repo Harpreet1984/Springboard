@@ -38,6 +38,8 @@ Plant diseases are generally classified into the following 3 categories: -
 1) Viral- Viruses are very small infectious RNA parasite that often damages or kills the plant’s infected cells. 
 2) Bacterial- Bacteria is a member of group of microscopic single celled organisms which can only be seen through a microscope. Bacteria often overwhelm the immune system and results in severe and harmful diseases in living organisms.
  3) Fungal- Fungi are organisms that lack chlorophyll and thus they do not have the ability to photosynthesize their own food.Fungi are especially harmful during preharvest and postharvest of crops. They produce highly toxic, hallucinogenic chemicals that have affected millions of animals including humans and still continue to do so.
+ 
+ ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Screen%20Shot%202023-03-02%20at%206.07.13%20PM.png)
 
 <a name="usage"></a>
 ## 2. Methodology
