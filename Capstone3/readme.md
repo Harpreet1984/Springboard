@@ -95,7 +95,8 @@ a) Problems with Plain Network: Usually Conventional deep learning networks cont
 
 ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig.%204.png)						
 						
-						*Fig 5 Vanishing Gradient Problem; Image source: Medium.com*
+						Fig 5 Vanishing Gradient Problem; Image source: Medium.com
+					
 						
 
 
