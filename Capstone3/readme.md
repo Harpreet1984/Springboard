@@ -67,7 +67,10 @@ We have 14 unique varieties of plants.
 We have 26 types of images that show a particular disease in a particular plant.
 
 There are 70295 images for training
+The below figure shows number of images in each disease category
 
+
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Screen%20Shot%202023-03-03%20at%201.58.10%20AM.png)
 
 <a name="usage"></a>
 ### 2.3 Data Preparation for training <a name="subparagraph1"></a>
