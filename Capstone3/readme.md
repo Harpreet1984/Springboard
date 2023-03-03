@@ -24,6 +24,8 @@ The goal of this project is to develop algorithms that can accurately diagnose a
 	2.2 [Exploring the dataset](#subparagraph1)	
 	
 	2.3 [Data Preparation for training](#subparagraph1)
+	
+	2.4 [Building the Model Architecture](#subparagraph1)
 3. [ Limitations of study. ](#usage)
 
 <a name="desc"></a>
@@ -78,5 +80,26 @@ The TorchVision datasets subpackage is a convenient utility for accessing well-k
 
 Normalising image input - Data normalization is an important step which ensures that each input parameter (pixel, in this case) has a similar data distribution. This makes convergence faster while training the network. Data normalization is done by subtracting the mean from each pixel and then dividing the result by the standard deviation. The distribution of such data would resemble a Gaussian curve centered at zero. For image inputs we need the pixel numbers to be positive, so we might choose to scale the normalized data in the range [0,1] or [0, 255]. For our data-set example, we need to transform the pixel values of each image (0-255) to 0-1 as neural networks. The entire array of pixel values is converted to torch tensor and then divided by 255.
 
+DataLoader is a subclass which comes from torch.utils.data. It helps in loading large and memory consuming datasets. It takes in batch_size(we are taking 32) which denotes the number of samples contained in each generated batch.Setting shuffle=True shuffles the dataset. It is heplful so that batches between epochs do not look alike. Doing so will eventually make our model more robust.
 
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig3.png)
+
+<a name="usage"></a>
+
+### 2.4 Building the model architecture  <a name="subparagraph1"></a>
+ResNet short for ‘Residual Networks’ is a neural network. It can have a very deep network and it is a subclass of convolutional neural networks. It does this by understanding the residual representation functions rather than learning and understanding the signal representation right away. The new concept introduced in ResNet was shortcut connections or skip connections, to fit the preceding layer input to next following layer without changing it. This shortcut attachment allows it to have an in-depth network. We had to pick ResNet as our model.	
+
+ Below are the benefits of using ResNet: 
+
+a) Problems with Plain Network: Usually Conventional deep learning networks contain convolutional layers interconnected with fully connected layers for the classification job, without skipping or changing any connection. Due to deeper layers, the complication of vanishing or exploding gradients may appear in the plain network.	
+
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig.%204.png)						
+						
+						*Fig 5 Vanishing Gradient Problem; Image source: Medium.com*
+						
+
+
+As seen from the above figure the deeper networks suffer more from vanishing/exploding gradient problem than shallow networks. 
+
+						
 <a name="usage"></a>
