@@ -9,3 +9,21 @@ The first step to good agricultural yield is protecting the plants from diseases
 
 
 The goal of this project is to develop algorithms that can accurately diagnose a disease based on an image.We will use deep learning for disease recognition on the PlantVillage dataset using deep learning and PyTorch.
+
+
+
+### Table of Contents
+
+1. [ Introduction. ](#desc)
+2. [ Methodology. ](#desc)
+3. [ Limitations of study. ](#usage)
+
+<a name="desc"></a>
+## 1. Introduction
+
+sometext
+
+<a name="usage"></a>
+## 2. Methodology
+
+sometext
