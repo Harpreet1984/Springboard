@@ -136,11 +136,11 @@ Here the previously clean and transformed data is trained on the training set. T
 
 Before we trained the model,we defined a utility function an evaluate function, which will perform the validation phase, and a fit_one_cycle function which will perform the entire training process. In fit_one_cycle, we have use some techniques:
 
-Learning Rate Scheduling: Instead of using a fixed learning rate, we will use a learning rate scheduler, which will change the learning rate after every batch of training. There are many strategies for varying the learning rate during training, and the one we’ll use is called the “One Cycle Learning Rate Policy”, which involves starting with a low learning rate, gradually increasing it batch-by-batch to a high learning rate for about 30% of epochs, then gradually decreasing it to a very low value for the remaining epochs.
+**Learning Rate Scheduling** : Instead of using a fixed learning rate, we will use a learning rate scheduler, which will change the learning rate after every batch of training. There are many strategies for varying the learning rate during training, and the one we’ll use is called the “One Cycle Learning Rate Policy”, which involves starting with a low learning rate, gradually increasing it batch-by-batch to a high learning rate for about 30% of epochs, then gradually decreasing it to a very low value for the remaining epochs.
 
-Weight Decay: We also use weight decay, which is a regularization technique which prevents the weights from becoming too large by adding an additional term to the loss function.
+**Weight Decay** :  We also use weight decay, which is a regularization technique which prevents the weights from becoming too large by adding an additional term to the loss function.
 
-Gradient Clipping: Apart from the layer weights and outputs, it also helpful to limit the values of gradients to a small range to prevent undesirable changes in parameters due to large gradient values. This simple yet effective technique is called gradient clipping.
+**Gradient Clipping** : Apart from the layer weights and outputs, it also helpful to limit the values of gradients to a small range to prevent undesirable changes in parameters due to large gradient values. This simple yet effective technique is called gradient clipping.
 
 <a name="usage"></a>
 ### 2.6 Results <a name="subparagraph1"></a>
