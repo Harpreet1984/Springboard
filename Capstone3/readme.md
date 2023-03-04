@@ -1,6 +1,6 @@
  #                       PlantDisease Dataset Disease Recognition  
 
-![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/PlantVillage-Dataset-Disease-Recognition-using-PyTorch-e1669809682570.png)
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/Screen%20Shot%202023-03-04%20at%2012.12.16%20AM.png)
 
 
 ###                                   Abstract
