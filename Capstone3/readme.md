@@ -186,7 +186,7 @@ Sensors, 17 (9) (2017), p. 2022, 10.3390/s17092022
  How Convolutional Neural Networks Diagnose Plant Disease
 https://spj.science.org/doi/10.34133/2019/9237136
 
-2] Yan Guo,1,2Jin Zhang,3Chengxin Yin,4Xiaonan Hu,1
+4] Yan Guo,1,2Jin Zhang,3Chengxin Yin,4Xiaonan Hu,1
 Plant Disease Identification Based on Deep Learning Algorithm in Smart Farming
 https://www.hindawi.com/journals/ddns/2020/2479172/#data-availability
 
