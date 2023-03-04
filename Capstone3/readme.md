@@ -30,7 +30,9 @@ The goal of this project is to develop algorithms that can accurately diagnose a
 	2.5 [Model Training](#subparagraph1)
 	
 	2.6 [Results](#subparagraph1)
-3. [ Limitations of study. ](#usage)
+3. [ Further Improvements of study. ](#usage)
+4. [ Conclusion](#usage)
+
 
 <a name="desc"></a>
 ## 1. Introduction
@@ -158,3 +160,14 @@ The results highly depend on the number of epochs the model is trained on and al
 
 <a name="subparagraph1"></a>
 
+## 3. Further Improvements of Study
+
+We can develop web application which gives the project a simple and clean look where a user just has to select a plant leaf image and the application will display the disease with the highest predicted percentage.
+
+We are currently constrained to the classification of single leaves, facing up, on a homogeneous background. While these are straightforward conditions, a real world application should be able to classify images of a disease as it presents itself directly on the plant. Indeed, many diseases don’t present themselves on the upper side of leaves only (or at all), but on many dierent parts of the plant. Thus, new image collection eorts should try to obtain images from many dierent perspectives, and ideally from settings that are as realistic as possible.
+
+We evaluated the applicability of Resnet  for the said classification problem. We can focus on other  popular architectures like AlexNet and GoogLeNet which were designed in the context of the "Large Scale Visual Recognition Challenge" for the Image Classifications.
+
+## 4. Conclusion
+
+Humans for centuries have evaluated and produced plantbased food products for fiber, medicine, home, etc. Diseases in plants are just one of the many hazards that must be considered while cultivating crops. Thus, it is important that we enhance the food quality and look to stable agricultural sector as it ensures a nation of food security. The project “Plant Disease Detection using Deep Learning” is aimed at building a neural network capable of detecting crop species and  common diseases. We were able to build a ResNet9 model using convolutional neural network that can recognize images with an accuracy of 99.23% using Pytorch. 
