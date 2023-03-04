@@ -1,6 +1,6 @@
  #                       PlantVillage Dataset Disease Recognition  
 
-![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/PlantVillage-Dataset-Disease-Recognition-using-PyTorch-e1669809682570.png)
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/PlantVillage-Dataset-Disease-Recognition-using-PyTorch-e1669809682570.png)
 
 
 ###                                   Abstract
@@ -26,6 +26,10 @@ The goal of this project is to develop algorithms that can accurately diagnose a
 	2.3 [Data Preparation for training](#subparagraph1)
 	
 	2.4 [Building the Model Architecture](#subparagraph1)
+	
+	2.5 [Model Training](#subparagraph1)
+	
+	2.6 [Results](#subparagraph1)
 3. [ Limitations of study. ](#usage)
 
 <a name="desc"></a>
@@ -47,7 +51,7 @@ Plant diseases are generally classified into the following 3 categories: -
 2) Bacterial- Bacteria is a member of group of microscopic single celled organisms which can only be seen through a microscope. Bacteria often overwhelm the immune system and results in severe and harmful diseases in living organisms.
  3) Fungal- Fungi are organisms that lack chlorophyll and thus they do not have the ability to photosynthesize their own food.Fungi are especially harmful during preharvest and postharvest of crops. They produce highly toxic, hallucinogenic chemicals that have affected millions of animals including humans and still continue to do so.
  
- ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Screen%20Shot%202023-03-02%20at%206.07.13%20PM.png)
+ ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/fig1.jpg)
 
 <a name="usage"></a>
 ## 2. Methodology
@@ -60,6 +64,11 @@ This analysis was conducted using Python through Jupyter notebook. In-built libr
 ### 2.1 Importing the dataset <a name="subparagraph1"></a>
 This dataset is recreated using offline augmentation from the original dataset. The original dataset can be found on this github repo. This dataset consists of about 87K rgb images of healthy and diseased crop leaves which is categorized into 38 different classes. The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure. A new directory containing 33 test images is created later for prediction purpose.
 
+
+ ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/plantdisease.webp)
+                         
+
+_Fig 2 : Plant Diseases_                              
 <a name="usage"></a>
 ### 2.2 Exploring the dataset <a name="subparagraph1"></a>
 The dataset contains 38 classes of crop disease pairs
@@ -72,8 +81,9 @@ There are 70295 images for training
 The below figure shows number of images in each disease category
 
 
-![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Screen%20Shot%202023-03-03%20at%201.58.10%20AM.png)
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/fig3.jpg)
 
+_Fig 3 : Number of images in each category_ 
 <a name="usage"></a>
 ### 2.3 Data Preparation for training <a name="subparagraph1"></a>
 The TorchVision datasets subpackage is a convenient utility for accessing well-known public image and video datasets. You can use these tools to start training new computer vision models very quickly.We used subclass torchvision.datasets.ImageFolder which helps in loading the image data when the data is arranged in a specific way
@@ -82,7 +92,9 @@ Normalising image input - Data normalization is an important step which ensures 
 
 DataLoader is a subclass which comes from torch.utils.data. It helps in loading large and memory consuming datasets. It takes in batch_size(we are taking 32) which denotes the number of samples contained in each generated batch.Setting shuffle=True shuffles the dataset. It is heplful so that batches between epochs do not look alike. Doing so will eventually make our model more robust.
 
-![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig3.png)
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/Fig%204%20.png)
+
+_Fig 4 : Batchsize 32 images for dataloader__
 
 <a name="usage"></a>
 
@@ -95,12 +107,54 @@ a) Problems with Plain Network: Usually Conventional deep learning networks cont
 
 ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig.%204.png)						
 						
-						Fig 5 Vanishing Gradient Problem; Image source: Medium.com
+_Fig 5 Vanishing Gradient Problem; Image source: Medium.com_ 
 					
 						
 
 
 As seen from the above figure the deeper networks suffer more from vanishing/exploding gradient problem than shallow networks. 
 
-						
+b) Skipping Connection in the ResNet: To solve the complication in the areas of vanishing/ and exploding gradients, a skipping interconnection is joined so that the raw input x to the next layer is the output given by the previous layer after few weight layers.	
+
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig6.png)
+
+The skip connection in the diagram above is labeled “identity.” It allows the interconnection of networks to learn the identity function, which facilitate it to pass the input to the block needed without passing or sending it through the other weight layers.Hence, the output is given as: H(x) = F(x) + x. The weight layers are there to understand the types of residual mapping like F(x) = H(x)−x. This allows us to stack additional layers and build a deeper
+network, offsetting the vanishing gradient by allowing the network interconnections to skip between some layers which it feels are less needed for training. Even if vanishing gradient occur in the weight layers, we will still have the feature x to get back to the preceding layers. 
+
+
+c) ResNet vs Plain Networks: When a plain network is used, a low layer network is always better. For eg. It is better to use plain network on an 18-layer network than a 34-layer network. For a high layer network Resnet performs better because in a deep network it beats plain networks by introducing skip connections, hence eliminating vanishing gradient problem.
+
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Fig%207%20.png)
+
+*Fig 7 Plain Networks v ResNet; Image source:Medium.com*
+
+If we compare18-layer plain network and18- layer ResNet, the difference isn’t much. This is because vanishing gradient problem does not appear for shallow networks. However, when ResNet is used on 34-layer network, it performs way better. Here vanishing gradient problem has been solved by using skip connections. 
+
 <a name="usage"></a>
+### 2.5 Model Training <a name="subparagraph1"></a>
+Here the previously clean and transformed data is trained on the training set. The images in ‘Train data’ folder will be used for training our neural network, while the ’Validate data’ will be used to validate results obtained from our trained model. During training the model will analyze the input data set and find its own meaning. Later on the ‘Test data’ will be used to test our model. Our trained neural network will be put to test on a set of images and we will know if the model works as expected or if there are any flaws in it.
+
+Before we trained the model,we defined a utility function an evaluate function, which will perform the validation phase, and a fit_one_cycle function which will perform the entire training process. In fit_one_cycle, we have use some techniques:
+
+Learning Rate Scheduling: Instead of using a fixed learning rate, we will use a learning rate scheduler, which will change the learning rate after every batch of training. There are many strategies for varying the learning rate during training, and the one we’ll use is called the “One Cycle Learning Rate Policy”, which involves starting with a low learning rate, gradually increasing it batch-by-batch to a high learning rate for about 30% of epochs, then gradually decreasing it to a very low value for the remaining epochs.
+
+Weight Decay: We also use weight decay, which is a regularization technique which prevents the weights from becoming too large by adding an additional term to the loss function.
+
+Gradient Clipping: Apart from the layer weights and outputs, it also helpful to limit the values of gradients to a small range to prevent undesirable changes in parameters due to large gradient values. This simple yet effective technique is called gradient clipping.
+
+<a name="usage"></a>
+### 2.6 Results <a name="subparagraph1"></a>
+The results of our classifier gives us an accuracy of 96.2 %  when trained on 10 epochs.
+The results highly depend on the number of epochs the model is trained on and also on the amount of testing dataset.We have achieve this accuracy by pre-processing the images to make the model more generic, split the data set into a number of batches and finally build and train the model.
+
+|             | Learning rate | Training loss  | Validation loss | Validation accuracy|
+| ----------- | -----------   |-------------   |-----------------|--------------------|
+| Epoch 0     |   0.00812     |	0.7511	       | 0.8085	         | 0.7636             |
+| Epoch 1     |   0.00000     |	0.1235	       | 0.0263          | 0.9925             |
+
+
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/fig%209.jpg)
+![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/fig%2010.jpg)
+
+<a name="subparagraph1"></a>
+
