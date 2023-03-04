@@ -32,6 +32,7 @@ The goal of this project is to develop algorithms that can accurately diagnose a
 	2.6 [Results](#subparagraph1)
 3. [ Further Improvements of study. ](#usage)
 4. [ Conclusion](#usage)
+5. [ References](#usage)
 
 
 <a name="desc"></a>
@@ -171,3 +172,21 @@ We evaluated the applicability of Resnet  for the said classification problem. W
 ## 4. Conclusion
 
 Humans for centuries have evaluated and produced plantbased food products for fiber, medicine, home, etc. Diseases in plants are just one of the many hazards that must be considered while cultivating crops. Thus, it is important that we enhance the food quality and look to stable agricultural sector as it ensures a nation of food security. The project “Plant Disease Detection using Deep Learning” is aimed at building a neural network capable of detecting crop species and  common diseases. We were able to build a ResNet9 model using convolutional neural network that can recognize images with an accuracy of 99.23% using Pytorch. 
+
+## 5. References
+
+1]  S.P. Mohanty, D.P. Hughes, M. Salathé
+Using deep learning for image-based plant disease detection Front. Plant Sci., 7 (2016), p. 1419, 10.3389/fpls.2016.01419
+
+2] A. Fuentes, S. Yoon, S.C. Kim, D.S. Park
+ A robust deep-learning-based detector for real-time tomato plant diseases and pests recognition
+Sensors, 17 (9) (2017), p. 2022, 10.3390/s17092022
+
+3] YOSUKE TODA AND FUMIO OKURA
+ How Convolutional Neural Networks Diagnose Plant Disease
+https://spj.science.org/doi/10.34133/2019/9237136
+
+2] Yan Guo,1,2Jin Zhang,3Chengxin Yin,4Xiaonan Hu,1
+Plant Disease Identification Based on Deep Learning Algorithm in Smart Farming
+https://www.hindawi.com/journals/ddns/2020/2479172/#data-availability
+
