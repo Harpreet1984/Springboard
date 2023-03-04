@@ -59,7 +59,7 @@ Plant diseases are generally classified into the following 3 categories: -
 <a name="usage"></a>
 ## 2. Methodology
 
-We have approached the given problem by using  deep learning framework PyTorch. For our end goal we decided to develop a model using  deep learningl and transfer learning technique. 
+We have approached the given problem by using  deep learning framework PyTorch. For our end goal we decided to develop a model using  deep learning and transfer learning technique. 
 
 This analysis was conducted using Python through Jupyter notebook. In-built libraries and methods were used to run the machine learning models. When needed, functions were defined to simplify specific analyses or visualizations.
 
