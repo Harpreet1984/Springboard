@@ -65,7 +65,7 @@ This analysis was conducted using Python through Jupyter notebook. In-built libr
 
 
 ### 2.1 Importing the dataset <a name="subparagraph1"></a>
-This dataset is recreated using offline augmentation from the original dataset. The original dataset can be found on this github repo. This dataset consists of about 87K rgb images of healthy and diseased crop leaves which is categorized into 38 different classes. The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure. A new directory containing 33 test images is created later for prediction purpose.
+This dataset is recreated using offline augmentation from the original dataset. This dataset consists of about 87K rgb images of healthy and diseased crop leaves which is categorized into 38 different classes. The total dataset is divided into 80/20 ratio of training and validation set preserving the directory structure. A new directory containing 33 test images is created later for prediction purpose.
 
 
  ![This is an image](https://github.com/Harpreet1984/Springboard/blob/main/Capstone3/Images/plantdisease.webp)
