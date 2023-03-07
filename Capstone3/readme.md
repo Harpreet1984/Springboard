@@ -147,7 +147,7 @@ Before we trained the model,we defined a utility function an evaluate function, 
 
 <a name="usage"></a>
 ### 2.6 Results <a name="subparagraph1"></a>
-The results of our classifier gives us an accuracy of 96.2 %  when trained on 10 epochs.
+The results of our classifier gives us an accuracy of 99.2 %  when trained on 2 epochs.
 The results highly depend on the number of epochs the model is trained on and also on the amount of testing dataset.We have achieve this accuracy by pre-processing the images to make the model more generic, split the data set into a number of batches and finally build and train the model.
 
 |             | Learning rate | Training loss  | Validation loss | Validation accuracy|
